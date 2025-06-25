@@ -1,5 +1,7 @@
 import dayjs from "dayjs";
 import { openingHours } from "../../utils/opening-hours.js";
+import { hoursCLick } from "./hours-click.js";
+
 
 const hours = document.getElementById("hours");
 
@@ -21,12 +23,11 @@ export function hoursLoad({ date }) {
   // Renderizar os horários
   opening.forEach(({ hour, available }) => {
     const li = document.createElement("li");
-    console.log(hour);
     li.classList.add("hour");
     li.classList.add(available ? "hour-available" : "hour-unavailable");
     li.textContent = hour;
 
-    if (hour === "09:00") {
+    if (hour === "9:00") {
       hourHeaderAdd("Manhã");
     } else if (hour === "13:00") {
       hourHeaderAdd("Tarde");
@@ -36,6 +37,8 @@ export function hoursLoad({ date }) {
 
     hours.append(li);
   });
+  // Adiciona o evento de clique nos horários disponiveis
+  hoursCLick();
 }
 
 function hourHeaderAdd(title) {
