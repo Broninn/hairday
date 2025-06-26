@@ -22,27 +22,26 @@ form.onsubmit = (event) => {
     }
 
     // Recupera o horario selecionado
-    const hourSelected = document.querySelector(".hour-selected")
+    const hourSelected = document.querySelector(".hour-selected");
 
-    if(!hourSelected){
+    if (!hourSelected) {
       return alert("Selecione a hora!");
     }
 
     // Recuperar somente a hora
-    const[hour] = hourSelected.innerText.split(":")
+    const [hour] = hourSelected.innerText.split(":");
 
     //Insere a hora na data
-    const when = dayjs(selectedDate.value).add(hour, "hour")
+    const when = dayjs(selectedDate.value).add(hour, "hour");
 
     // Gera um id
-    const id = new Date().getTime()
+    const id = new Date().getTime();
 
     console.log({
       id,
       name,
-      when
-    })
-
+      when,
+    });
   } catch (error) {
     alert("Não foi possível realizar o agendamento");
     console.log(error);
