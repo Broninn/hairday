@@ -1,3 +1,9 @@
 {
-    "schedules": []
+  "schedules": [
+    {
+      "id": 1750951854573,
+      "name": "Bruno Mosko",
+      "when": "2025-06-26T23:00:00.000Z"
+    }
+  ]
 }
